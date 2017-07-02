@@ -3,12 +3,12 @@
 ## Install
 Demonstrate an understanding of the installation process for Cloudera Manager, CDH, and the ecosystem projects.
 
-- Set up a local CDH repository
-- Perform OS-level configuration for Hadoop installation
-- Install Cloudera Manager server and agents
-- Install CDH using Cloudera Manager
-- Add a new node to an existing cluster
-- Add a service using Cloudera Manager
+### Set up a local CDH repository
+### Perform OS-level configuration for Hadoop installation
+### Install Cloudera Manager server and agents
+### Install CDH using Cloudera Manager
+### Add a new node to an existing cluster
+### Add a service using Cloudera Manager
  
 ## Configure
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
@@ -201,14 +201,14 @@ curl "http://$httpfs_host$:14000/webhdfs/v1/user/$username$?op=list&user.name=$u
 ```
 
 ### Efficiently copy data within a cluster/between clusters
-- Create/restore a snapshot of an HDFS directory
-- Get/set ACLs for a file or directory structure
-- Benchmark the cluster (I/O, CPU, network)
+### Create/restore a snapshot of an HDFS directory
+### Get/set ACLs for a file or directory structure
+### Benchmark the cluster (I/O, CPU, network)
 
 ## Troubleshoot
 Demonstrate ability to find the root cause of a problem, optimize inefficient execution, and resolve resource contention scenarios
 
-- Resolve errors/warnings in Cloudera Manager
-- Resolve performance problems/errors in cluster operation
-- Determine reason for application failure
-- Configure the Fair Scheduler to resolve application delays 
+### Resolve errors/warnings in Cloudera Manager
+### Resolve performance problems/errors in cluster operation
+### Determine reason for application failure
+### Configure the Fair Scheduler to resolve application delays 
