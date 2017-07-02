@@ -1,4 +1,4 @@
-# CCA131: Cloudera Administration Certification (new version)
+# CCA131: Cloudera Administration Certification
 
 ## Install
 Demonstrate an understanding of the installation process for Cloudera Manager, CDH, and the ecosystem projects.
@@ -99,12 +99,41 @@ In addition to that:
 ## Manage
 Maintain and modify the cluster to support day-to-day operations in the enterprise
 
-- Rebalance the cluster
-- Set up alerting for excessive disk fill
-- Define and install a rack topology script
-- Install new type of I/O compression library in cluster
-- Revise YARN resource assignment based on user feedback
-- Commission/decommission a node
+### Rebalance the cluster
+HDFS data might not always be placed uniformly across DataNodes. One common reason is addition of new DataNodes to an existing cluster. HDFS provides a balancer utility that analyzes block placement and balances data across the DataNodes. It moves blocks until the cluster is deemed to be balanced, which means that the utilization of every DataNode (ratio of used space on the node to total capacity of the node) differs from the utilization of the cluster (ratio of used space on the cluster to total capacity of the cluster) by no more than a given threshold percentage:
+- Click on HDFS
+- Click on actions
+- Rebalance
+
+Beyond to that, you can even set two important configurations: 
+- HDFS -> Configuration -> Rebalancing Threshold
+- HDFS -> Configuration -> DataNode Balancing Threshold: that limits that bandwidth that can be used during the rebalancing phase
+### Set up alerting for excessive disk fill
+The first thing you should do is to enable the alerts for any service you would like to receive alerts. When set, Cloudera Manager will send alerts when the health of this service reaches the threshold specified by the EventServer setting eventserver_health_events_alert_threshold. 
+
+Let's consider the HDFS service for example:
+- Click HDFS 
+- Click on Configuration
+- Make sure that property 'Enable Service Level Health Alerts' is enabled
+
+Once this has been enabled: 
+- Locate HDFS configuration named 'DataNode Free Space Monitoring Thresholds' (for example) and set the threshold as you want
+
+Then: 
+- Click on Cloudera Management Service 
+- Click Configuration
+- Make sure that property 'Alerts: Enable Email Alerts' is enabled
+- Configure it by setting email address and so on
+
+Finally, try to trigger it and check if you received a new mail:
+```sh
+mail
+```
+
+### Define and install a rack topology script
+### Install new type of I/O compression library in cluster
+### Revise YARN resource assignment based on user feedback
+### Commission/decommission a node
 
  ## Secure
 Enable relevant services and configure the cluster to meet goals defined by security policy; demonstrate knowledge of basic security practices
