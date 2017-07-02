@@ -1,6 +1,6 @@
 # CCA131: Cloudera Administration Certification (new version)
 
-# Install
+## Install
 Demonstrate an understanding of the installation process for Cloudera Manager, CDH, and the ecosystem projects.
 
 - Set up a local CDH repository
