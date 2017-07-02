@@ -29,6 +29,7 @@ sudo -u hdfs hdfs dfs -ls /user/
 ### Configure NameNode HA
 In order to be able to enable the NameNode HA service Zookeeper should be installed on our cluster.
 - Install an ensemble of Zookeeper hosts (odd number >1): add service -> zookeeper -> select 3 (for example) hosts to which install zookeeper daemon
+
 Now we are ready to enable HDFS in HA:
 - click HDFS
 - click on actions and choose 'Enable High Availability'
