@@ -12,10 +12,9 @@ Demonstrate an understanding of the installation process for Cloudera Manager, C
  
 ## Configure
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
-
-- Configure a service using Cloudera Manager
+### Configure a service using Cloudera Manager
 ### Create an HDFS user's home directory
-Let us suppose to have the user 'mickymouse', and let's create a new home directory with user hdfs. 
+Open a DataNode shell and let us suppose to create the home directory for the user 'mickymouse'.
 ```sh
 sudo -u hdfs hdfs dfs -mkdir /user/mickymouse
 ```
@@ -27,9 +26,17 @@ Finally let's check what we did by typing
 ```sh
 sudo -u hdfs hdfs dfs -ls /user/
 ```
-- Configure NameNode HA
-- Configure ResourceManager HA
-- Configure proxy for Hiveserver2/Impala
+### Configure NameNode HA
+In order to be able to enable the NameNode HA service Zookeeper should be installed on our cluster.
+- Install an ensemble of Zookeeper hosts (odd number >1): add service -> zookeeper -> select 3 (for example) hosts to which install zookeeper daemon
+Now we are ready to enable HDFS in HA:
+- click HDFS
+- click on actions and choose 'Enable High Availability'
+- follow the wizard and select where to install the standby NameNode (usually where you have the Secondary NameNode), and where to install the ensemble of an odd number (>1) of JournalNodes
+- restart the HDFS
+
+### Configure ResourceManager HA
+### Configure proxy for Hiveserver2/Impala
 
 ## Manage
 Maintain and modify the cluster to support day-to-day operations in the enterprise
