@@ -138,11 +138,14 @@ mail
  ## Secure
 Enable relevant services and configure the cluster to meet goals defined by security policy; demonstrate knowledge of basic security practices
 
-- Configure HDFS ACLs
-- Install and configure Sentry
-- Configure Hue user authorization and authentication
-- Enable/configure log and query redaction
-- Create encrypted zones in HDFS
+### Configure HDFS ACLs
+### Install and configure Sentry
+### Configure Hue user authorization and authentication
+### Enable/configure log and query redaction
+- Make sure that the property 'Enable Log and Query Redaction' is enabled (HDFS->Configuration->redaction_policy_enabled)
+- Configure the property "Log and Query Redaction Policy" by creating and defining as many rules you want
+
+### Create encrypted zones in HDFS
 
 ## Test
 Benchmark the cluster operational metrics, test system configuration for operation and efficiency
