@@ -139,8 +139,19 @@ mail
 Enable relevant services and configure the cluster to meet goals defined by security policy; demonstrate knowledge of basic security practices
 
 ### Configure HDFS ACLs
+Hadoop supports extended ACLs feature, that is by default disabled:
+- Enable Access Control Lists
+- I will discuss ACLs commands in the "Test" section
+
 ### Install and configure Sentry
 ### Configure Hue user authorization and authentication
+- Connect to Hue Web UI via browser (ip_addr:8888) 
+- In the top right corner click on your account name 
+- Choose 'Manage Users'
+- Add Users
+- Add Group if necessary
+- Assign a Group to a User
+
 ### Enable/configure log and query redaction
 - Make sure that the property 'Enable Log and Query Redaction' is enabled (HDFS->Configuration->redaction_policy_enabled)
 - Configure the property "Log and Query Redaction Policy" by creating and defining as many rules you want
