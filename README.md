@@ -39,10 +39,41 @@ Now we are ready to enable HDFS in HA:
 ### Configure ResourceManager HA
 - click YARN
 - click on actions
-- enable ResourceManager HA
-- select on which host install the Standby ResourceManager
+- enable High Availability
+- select where to install the Standby ResourceManager
 
 ### Configure proxy for Hiveserver2/Impala
+#### Hive
+- Download load-balancing proxy software of your choice on a single host (haproxy for example)
+```sh
+sudo yum install haproxy
+```
+- Configure the software, by editing a configuration file :
+```sh
+sudo vi /etc/haproxy/haproxy.cfg
+```
+Set the port for the load balancer to listen on and relay HiveServer2 requests back and forth.
+Set the port and hostname for each HiveServer2 host—that is, the hosts from which the load balancer chooses when relaying each query.
+- Restart the haproxy
+```sh
+sudo vi service haproxy restart
+sudo vi service haproxy status
+```
+
+Now if you connect to the HiveServer2 by using beeline: 
+```sh
+beeline -u connect jdbc:hive2://proxy_ip:proxy_port -n mickymouse
+```
+
+In addition to that:
+- Go to the Hive service.
+- Click the Configuration tab.
+- Select Scope > HiveServer2.
+- Select Category > Main.
+- Locate the HiveServer2 Load Balancer property or search for it by typing its name in the Search box.
+- Enter values for hostname:port_number.
+
+#### Impala
 
 ## Manage
 Maintain and modify the cluster to support day-to-day operations in the enterprise
