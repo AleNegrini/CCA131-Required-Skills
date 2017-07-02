@@ -184,8 +184,23 @@ hadoop fs -cat /zone/helloWorld
 ## Test
 Benchmark the cluster operational metrics, test system configuration for operation and efficiency
 
-- Execute file system commands via HTTPFS
-- Efficiently copy data within a cluster/between clusters
+### Execute file system commands via HTTPFS
+The first thing to do is to add the HTTPFS Role Instance to the cluster:
+- Click HDFS 
+- Add Role Instance
+- Select the host on which install HTTPFS gateway daemon
+
+HttpFS HTTP web-service API calls are HTTP REST calls that map to a HDFS file system operation. 
+Here below a set of possible commands: 
+```sh
+# Get the user home directory
+curl "http://$httpfs_host$:14000/webhdfs/v1?op=gethomedirectory&user.name=$username$"
+
+# Create a new file
+curl "http://$httpfs_host$:14000/webhdfs/v1/user/$username$?op=list&user.name=$username$"
+```
+
+### Efficiently copy data within a cluster/between clusters
 - Create/restore a snapshot of an HDFS directory
 - Get/set ACLs for a file or directory structure
 - Benchmark the cluster (I/O, CPU, network)
