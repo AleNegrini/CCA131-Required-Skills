@@ -10,7 +10,7 @@ Demonstrate an understanding of the installation process for Cloudera Manager, C
 - Add a new node to an existing cluster
 - Add a service using Cloudera Manager
  
-# Configure
+## Configure
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
 
 - Configure a service using Cloudera Manager
@@ -19,7 +19,7 @@ Perform basic and advanced configuration needed to effectively administer a Hado
 - Configure ResourceManager HA
 - Configure proxy for Hiveserver2/Impala
 
-# Manage
+## Manage
 Maintain and modify the cluster to support day-to-day operations in the enterprise
 
 - Rebalance the cluster
@@ -29,7 +29,7 @@ Maintain and modify the cluster to support day-to-day operations in the enterpri
 - Revise YARN resource assignment based on user feedback
 - Commission/decommission a node
 
-# Secure
+ ## Secure
 Enable relevant services and configure the cluster to meet goals defined by security policy; demonstrate knowledge of basic security practices
 
 - Configure HDFS ACLs
@@ -38,7 +38,7 @@ Enable relevant services and configure the cluster to meet goals defined by secu
 - Enable/configure log and query redaction
 - Create encrypted zones in HDFS
 
-# Test
+## Test
 Benchmark the cluster operational metrics, test system configuration for operation and efficiency
 
 - Execute file system commands via HTTPFS
@@ -47,7 +47,7 @@ Benchmark the cluster operational metrics, test system configuration for operati
 - Get/set ACLs for a file or directory structure
 - Benchmark the cluster (I/O, CPU, network)
 
-# Troubleshoot
+## Troubleshoot
 Demonstrate ability to find the root cause of a problem, optimize inefficient execution, and resolve resource contention scenarios
 
 - Resolve errors/warnings in Cloudera Manager
