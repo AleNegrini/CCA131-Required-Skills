@@ -15,9 +15,16 @@ Perform basic and advanced configuration needed to effectively administer a Hado
 
 - Configure a service using Cloudera Manager
 - Create an HDFS user's home directory
+Let us suppose to have the user 'mickymouse', and let's create a new home directory with user hdfs. 
 ```sh
-sudo -u hdfs hdfs dfs -mkdir /user/foo
-sudo -u hdfs hdfs dfs -chown foo /user/foo
+sudo -u hdfs hdfs dfs -mkdir /user/mickymouse
+```
+Once that directory has been created, let's give mickemouse user ownership
+```sh
+sudo -u hdfs hdfs dfs -chown mickymouse /user/mickymouse
+```
+Finally let's check what we did by typing
+```sh
 sudo -u hdfs hdfs dfs -ls /user/
 ```
 - Configure NameNode HA
