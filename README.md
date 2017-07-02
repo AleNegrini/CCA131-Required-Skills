@@ -15,6 +15,11 @@ Perform basic and advanced configuration needed to effectively administer a Hado
 
 - Configure a service using Cloudera Manager
 - Create an HDFS user's home directory
+```sh
+sudo -u hdfs hdfs dfs -mkdir /user/foo
+sudo -u hdfs hdfs dfs -chown foo /user/foo
+sudo -u hdfs hdfs dfs -ls /user/
+```
 - Configure NameNode HA
 - Configure ResourceManager HA
 - Configure proxy for Hiveserver2/Impala
