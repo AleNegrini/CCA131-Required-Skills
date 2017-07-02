@@ -1,26 +1,25 @@
 # CCA131: Cloudera Administration Certification (new version)
 
-Install
+# Install
 Demonstrate an understanding of the installation process for Cloudera Manager, CDH, and the ecosystem projects.
 
-Set up a local CDH repository
-Perform OS-level configuration for Hadoop installation
-Install Cloudera Manager server and agents
-Install CDH using Cloudera Manager
-Add a new node to an existing cluster
-Add a service using Cloudera Manager
+- Set up a local CDH repository
+- Perform OS-level configuration for Hadoop installation
+- Install Cloudera Manager server and agents
+- Install CDH using Cloudera Manager
+- Add a new node to an existing cluster
+- Add a service using Cloudera Manager
  
-
-Configure
+# Configure
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
 
-Configure a service using Cloudera Manager
-Create an HDFS user's home directory
-Configure NameNode HA
-Configure ResourceManager HA
-Configure proxy for Hiveserver2/Impala
-Manage
-Maintain and modify the cluster to support day-to-day operations in the enterprise
+- Configure a service using Cloudera Manager
+- Create an HDFS user's home directory
+- Configure NameNode HA
+- Configure ResourceManager HA
+- Configure proxy for Hiveserver2/Impala
+- Manage
+- Maintain and modify the cluster to support day-to-day operations in the enterprise
 
 Rebalance the cluster
 Set up alerting for excessive disk fill
