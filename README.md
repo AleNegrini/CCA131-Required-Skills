@@ -14,8 +14,7 @@ Demonstrate an understanding of the installation process for Cloudera Manager, C
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
 
 - Configure a service using Cloudera Manager
-- Create an HDFS user's home directory
-
+### Create an HDFS user's home directory
 Let us suppose to have the user 'mickymouse', and let's create a new home directory with user hdfs. 
 ```sh
 sudo -u hdfs hdfs dfs -mkdir /user/mickymouse
