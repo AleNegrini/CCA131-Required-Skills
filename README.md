@@ -157,6 +157,29 @@ Hadoop supports extended ACLs feature, that is by default disabled:
 - Configure the property "Log and Query Redaction Policy" by creating and defining as many rules you want
 
 ### Create encrypted zones in HDFS
+HDFS implements transparent, end-to-end encryption. Once configured, data read from and written to special HDFS directories is transparently encrypted and decrypted without requiring changes to user application code. This encryption is also end-to-end, which means the data can only be encrypted and decrypted by the client. HDFS never stores or has access to unencrypted data or unencrypted data encryption keys. This satisfies two typical requirements for encryption: at-rest encryption (meaning data on persistent media, such as a disk) as well as in-transit encryption (e.g. when data is travelling over the network).
+
+First of all one additional service is needed: 
+- Add KMS Service and follow the wizard
+
+When KMS is installed you should to restarts some services. 
+At that point you can proceed by creating a new encrypted zone as follows: 
+
+```sh
+# As the normal user, create a new encryption key
+hadoop key create myKey
+
+# As the super user, create a new empty directory and make it an encryption zone
+hadoop fs -mkdir /zone
+hdfs crypto -createZone -keyName myKey -path /zone
+
+# chown it to the normal user
+hadoop fs -chown myuser:myuser /zone
+
+# As the normal user, put a file in, read it out
+hadoop fs -put helloWorld /zone
+hadoop fs -cat /zone/helloWorld
+```
 
 ## Test
 Benchmark the cluster operational metrics, test system configuration for operation and efficiency
