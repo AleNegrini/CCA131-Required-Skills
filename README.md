@@ -196,7 +196,7 @@ Here below a set of possible commands:
 # Get the user home directory
 curl "http://$httpfs_host$:14000/webhdfs/v1?op=gethomedirectory&user.name=$username$"
 
-# Create a new file
+# List files
 curl "http://$httpfs_host$:14000/webhdfs/v1/user/$username$?op=list&user.name=$username$"
 ```
 
