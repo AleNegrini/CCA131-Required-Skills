@@ -74,6 +74,27 @@ In addition to that:
 - Enter values for hostname:port_number.
 
 #### Impala
+- Download load-balancing proxy software of your choice on a single host (haproxy for example)
+```sh
+sudo yum install haproxy
+```
+- Configure the software, by editing a configuration file :
+```sh
+sudo vi /etc/haproxy/haproxy.cfg
+```
+Set the port for the load balancer to listen on and relay Impala requests back and forth.
+Set the port and hostname for each impalad host—that is, the hosts from which the load balancer chooses when relaying each query.
+- Restart the haproxy
+```sh
+sudo vi service haproxy restart
+sudo vi service haproxy status
+```
+
+In addition to that:
+- Go to the Impala service.
+- Click the Configuration tab.
+- Locate the Impala Load Balancer property or search for it by typing its name in the Search box.
+- Enter values for hostname:port_number.
 
 ## Manage
 Maintain and modify the cluster to support day-to-day operations in the enterprise
