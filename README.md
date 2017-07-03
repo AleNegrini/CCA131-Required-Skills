@@ -297,3 +297,18 @@ Demonstrate ability to find the root cause of a problem, optimize inefficient ex
 ### Resolve performance problems/errors in cluster operation
 ### Determine reason for application failure
 ### Configure the Fair Scheduler to resolve application delays 
+The Fair Scheduler is the Cloudera recommended scheduler option. 
+
+To manually create a pool/subpool:
+- Select Clusters > Cluster name > Dynamic Resource Pool Configuration. The YARN > Resource Pools tab displays.
+- Click at the right of a resource pool row and select Create Pool/Subpool. Configure subpool properties.
+- Click Create.
+- Click Refresh Dynamic Resource Pools
+
+Identical procedure for Impala Fair Scheduler Pools
+
+
+```sh
+# sometimes it could be necessary to submit a job to a specific pool (different from the default one); in this case the parameter to set is the following: 
+$ hadoop jar jobname.jar -D mapred.job.queue.name=queue name
+```
