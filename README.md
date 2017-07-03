@@ -239,6 +239,23 @@ $ hdfs dfs -cp /snapshottable_path/.snapshot/snapshot_path/file_snap /snapshotta
 ```
 
 ### Get/set ACLs for a file or directory structure
+```sh
+# Displays the Access Control Lists (ACLs) of files and directories. If a directory has a default ACL, then getfacl also displays the default ACL.
+$ hadoop fs -getfacl [-R] <path>
+```
+
+```sh
+# Sets Access Control Lists (ACLs) of files and directories.
+$ hadoop fs -setfacl [-R] [-b |-k -m |-x <acl_spec> <path>] |[--set <acl_spec> <path>]
+- -b: Remove all but the base ACL entries. The entries for user, group and others are retained for compatibility with permission bits.
+- -k: Remove the default ACL.
+- -R: Apply operations to all files and directories recursively.
+- -m: Modify ACL. New entries are added to the ACL, and existing entries are retained.
+- -x: Remove specified ACL entries. Other ACL entries are retained.
+- --set: Fully replace the ACL, discarding all existing entries. The acl_spec must include entries for user, group, and others for compatibility with permission bits.
+- acl_spec: Comma separated list of ACL entries.
+- path: File or directory to modify.
+```
 ### Benchmark the cluster (I/O, CPU, network)
 
 ## Troubleshoot
