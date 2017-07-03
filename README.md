@@ -208,7 +208,7 @@ DistCp Version 2 (distributed copy) is a tool used for large inter/intra-cluster
 $ hadoop distcp /source_path /dest_path
 
 # DistCp between two clusters:
-$ hadoop distcp hdfs://cluster_nn1:8020/source_path hdfs://cluster_nn2/dest_path
+$ hadoop distcp hdfs://cluster_nn1:8020/source_path hdfs://cluster_nn2:8020/dest_path
 ```
 
 In case you want to copy data within the same cluster you can simply use: 
