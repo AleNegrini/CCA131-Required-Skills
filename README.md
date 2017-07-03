@@ -201,7 +201,43 @@ curl "http://$httpfs_host$:14000/webhdfs/v1/user/$username$?op=list&user.name=$u
 ```
 
 ### Efficiently copy data within a cluster/between clusters
+DistCp Version 2 (distributed copy) is a tool used for large inter/intra-cluster copying. It uses MapReduce to effect its distribution, error handling and recovery, and reporting. It expands a list of files and directories into input to map tasks, each of which will copy a partition of the files specified in the source list.
+
+```sh
+# DistCp in the same cluster:
+$ hadoop distcp /source_path /dest_path
+
+# DistCp between two clusters:
+$ hadoop distcp hdfs://cluster_nn1:8020/source_path hdfs://cluster_nn2/dest_path
+```
+
+In case you want to copy data within the same cluster you can simply use: 
+```sh
+# Look the documentation for command options 
+$ hdfs dfs -cp /source_path /dest_path 
+```
+
 ### Create/restore a snapshot of an HDFS directory
+The first thing you should make in order to be able to take snapshot is to enable it for a given folder:
+- Click HDFS 
+- File Browser
+- Browse to the directory you want to snapshot
+- Enable Snapshot
+
+Once the snapshot feature has been enabled you can take the snapshot (click on button "Take Snapshot"), name and save it. 
+
+Whenever you want to restore a file: 
+```sh
+# get the list of the snapshots taken
+$ hdfs dfs -ls /snapshottable_path/.snapshot/
+
+# get the list of files contained in snapshots
+$ hdfs dfs -ls /snapshottable_path/.snapshot/snapshot_path
+
+# restore the file(s) you want
+$ hdfs dfs -cp /snapshottable_path/.snapshot/snapshot_path/file_snap /snapshottable_path/
+```
+
 ### Get/set ACLs for a file or directory structure
 ### Benchmark the cluster (I/O, CPU, network)
 
