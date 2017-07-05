@@ -156,6 +156,11 @@ mail
 ### Install new type of I/O compression library in cluster
 ### Revise YARN resource assignment based on user feedback
 ### Commission/decommission a node
+- Click Hosts tab
+- Select the hosts you want to decommission
+- Actions for Selected -> Hosts decommission
+
+Same for recommissioning
 
  ## Secure
 Enable relevant services and configure the cluster to meet goals defined by security policy; demonstrate knowledge of basic security practices
