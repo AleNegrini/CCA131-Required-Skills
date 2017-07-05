@@ -5,6 +5,28 @@ Demonstrate an understanding of the installation process for Cloudera Manager, C
 
 ### Set up a local CDH repository
 ### Perform OS-level configuration for Hadoop installation
+There are different system configurations, I just reported some: 
+- Hostname Resolution: properly configure file /etc/hosts with the association between the FQDN and the IP address
+```sh
+sudo vi /etc/hosts
+```
+- mount disks with the noatime option
+- reduce the swappiness (vm.swappiness=1)
+```sh
+# Check vm.swappiness value
+sysctl vm.swappiness
+
+# Change vm.swappiness value
+sudo vi /proc/sys/vm/swappiness
+# edit and add the line:
+vm.swappiness=1
+```
+- configure IPTable if required: Hadoop requires many ports for communications (Configuration -> All Port Configurations to see all ports used)
+- disable IPv6
+- disable SELinux
+- install and configure ntp daemon for service synchronization
+- Hosts -> Host Inspector checks for many of the items just discussed
+
 ### Install Cloudera Manager server and agents
 ### Install CDH using Cloudera Manager
 ### Add a new node to an existing cluster
