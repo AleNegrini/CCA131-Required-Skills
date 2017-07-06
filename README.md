@@ -159,6 +159,14 @@ mail
 ```
 
 ### Define and install a rack topology script
+If implementing an external script, it will be specified with the net.topology.script.file.name parameter in the configuration files. 
+
+- Click HDFS
+- Configuration
+- Type net.topology.script.file.name
+- Insert the script path
+
+Examples of scripts are reported here https://hadoop.apache.org/docs/r2.8.0/hadoop-project-dist/hadoop-common/RackAwareness.html
 ### Install new type of I/O compression library in cluster
 ### Revise YARN resource assignment based on user feedback
 ### Commission/decommission a node
