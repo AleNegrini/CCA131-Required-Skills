@@ -177,6 +177,21 @@ Hadoop supports extended ACLs feature, that is by default disabled:
 - I will discuss ACLs commands in the "Test" section
 
 ### Install and configure Sentry
+First thing is to install the Sentry service:
+- Add Service 
+- Choose Sentry
+- Choose the two nodes where install sentry service and gateway
+- Insert Sentry DB details
+
+Some prerequisites should be met: 
+- set properly permissions on hive metastore:
+```sh
+sudo -u hdfs hdfs dfs -chmod -R 771 /user/hive/warehouse
+sudo -u hdfs hdfs dfs -chown -R hive:hive /user/hive/warehouse
+```
+- disable HiveServer2 Impersonation
+- enable Sentry Service for Hive (Hive -> Configurations -> Sentry Service and enable Sentry)
+
 ### Configure Hue user authorization and authentication
 - Connect to Hue Web UI via browser (ip_addr:8888) 
 - In the top right corner click on your account name 
