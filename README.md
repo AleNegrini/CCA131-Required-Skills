@@ -24,6 +24,12 @@ vm.swappiness=1
 - configure IPTable if required: Hadoop requires many ports for communications (Configuration -> All Port Configurations to see all ports used)
 - disable IPv6
 - disable SELinux
+```sh
+sudo vi /etc/syslog/selinux
+
+# Edit 
+SELINUX=disabled
+```
 - install and configure ntp daemon for service synchronization
 - Hosts -> Host Inspector checks for many of the items just discussed
 
