@@ -167,7 +167,18 @@ If implementing an external script, it will be specified with the net.topology.s
 - Insert the script path
 
 Examples of scripts are reported here https://hadoop.apache.org/docs/r2.8.0/hadoop-project-dist/hadoop-common/RackAwareness.html
+
+An alternate way to assign racks to hosts is the following one: 
+- Hosts
+- Select host
+- Actions -> Assign rack
+
 ### Install new type of I/O compression library in cluster
+- Install the GPLEXTRAS5 parcel
+- yum install lzo lzop on each host
+- add the gplextras repo and yum install hadoop-lzo on all hosts
+- added com.hadoop.compression.lzo.LzopCodec, and com.hadoop.compression.lzo.LzoCodec to the list of codecs
+- enabled mapreduce.map.output.compress and set 
 ### Revise YARN resource assignment based on user feedback
 ### Commission/decommission a node
 - Click Hosts tab
