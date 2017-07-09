@@ -59,8 +59,17 @@ You can follow two ways:
 - Installation Path B (the recommended solution) - https://www.cloudera.com/documentation/enterprise/5-4-x/topics/cm_ig_install_path_b.html
 
 ### Install CDH using Cloudera Manager
+While you are installing Cloudera Manager you will be asked for the local CDH repository. 
+You should put the path in which parcels config files have been downloaded
 ### Add a new node to an existing cluster
+- Cloudera Manager
+- Hosts 
+- Add New Hosts to Cluster
+- Specify which instance roles install on this new host
 ### Add a service using Cloudera Manager
+- Cloudera Manager
+- Add Service
+- Follow service wizard for installation and configuration
  
 ## Configure
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
