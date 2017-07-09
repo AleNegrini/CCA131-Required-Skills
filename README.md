@@ -141,12 +141,32 @@ Set the port and hostname for each impalad host—that is, the hosts from which 
 sudo vi service haproxy restart
 sudo vi service haproxy status
 ```
+- connect to impalad service through proxy
+```sh
+impala-shell -i <proxy_address>:<proxy_port>
+```
 
 In addition to that:
 - Go to the Impala service.
 - Click the Configuration tab.
 - Locate the Impala Load Balancer property or search for it by typing its name in the Search box.
 - Enter values for hostname:port_number.
+
+If you want to make Hue aware of the presence of such load balancer, you should make some little changes in Hue.
+- Manual approach: edit file /etc/hue/hue.ini
+```sh
+[impala]
+server_host=<hostname running HAProxy>
+server_port=<port HAProxy is bound to>
+server_conn_timeout=<timeout in seconds>
+```
+- Using Cloudera Manager: Hue -> edit "Hue Service Advanced Configuration Snippet (Safety Valve) for hue_safety_valve.ini" property as 
+```sh
+[impala]
+server_host=<hostname running HAProxy>
+server_port=<port HAProxy is bound to>
+server_conn_timeout=<timeout in seconds>
+```
 
 ## Manage
 Maintain and modify the cluster to support day-to-day operations in the enterprise
