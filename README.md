@@ -416,8 +416,11 @@ $ hadoop jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar teravalidate <da
 Demonstrate ability to find the root cause of a problem, optimize inefficient execution, and resolve resource contention scenarios
 
 ### Resolve errors/warnings in Cloudera Manager
+Answer strongly depends on the scenario 
 ### Resolve performance problems/errors in cluster operation
+Answer strongly depends on the scenario 
 ### Determine reason for application failure
+Answer strongly depends on the scenario 
 ### Configure the Fair Scheduler to resolve application delays 
 The Fair Scheduler is the Cloudera recommended scheduler option. 
 
