@@ -4,6 +4,26 @@
 Demonstrate an understanding of the installation process for Cloudera Manager, CDH, and the ecosystem projects.
 
 ### Set up a local CDH repository
+Install a web server
+```sh
+# Download and install
+sudo yum install httpd
+
+# Run it
+sudo service httpd start
+
+# Check its status
+sudo service httpd status
+```
+
+Create the directory that will contain CDH parcels in /var/www/html/ 
+```sh
+# Download CDH parcels
+sudo wget http://archive.cloudera.com/cdh5/parcels/latest/CDH-5.11.1-1.cdh5.11.1.p0.4-el7.parcel
+sudo wget http://archive.cloudera.com/cdh5/parcels/latest/CDH-5.11.1-1.cdh5.11.1.p0.4-el7.parcel.sha1
+sudo wget http://archive.cloudera.com/cdh5/parcels/latest/manifest.json
+```
+
 ### Perform OS-level configuration for Hadoop installation
 There are different system configurations, I just reported some: 
 - Hostname Resolution: properly configure file /etc/hosts with the association between the FQDN and the IP address
@@ -34,6 +54,10 @@ SELINUX=disabled
 - Hosts -> Host Inspector checks for many of the items just discussed
 
 ### Install Cloudera Manager server and agents
+You can follow two ways: 
+- Installation Path A (recommended only for testing purposes) - https://www.cloudera.com/documentation/enterprise/5-4-x/topics/cm_ig_install_path_a.html
+- Installation Path B (the recommended solution) - https://www.cloudera.com/documentation/enterprise/5-4-x/topics/cm_ig_install_path_b.html
+
 ### Install CDH using Cloudera Manager
 ### Add a new node to an existing cluster
 ### Add a service using Cloudera Manager
