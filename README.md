@@ -74,6 +74,7 @@ You should put the path in which parcels config files have been downloaded
 ## Configure
 Perform basic and advanced configuration needed to effectively administer a Hadoop cluster
 ### Configure a service using Cloudera Manager
+This answer strongly depends on the specific service you'd like to configure. 
 ### Create an HDFS user's home directory
 Open a DataNode shell and let us suppose to create the home directory for the user 'mickymouse'.
 ```sh
