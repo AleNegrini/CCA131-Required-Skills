@@ -234,6 +234,7 @@ An alternate way to assign racks to hosts is the following one:
 - added com.hadoop.compression.lzo.LzopCodec, and com.hadoop.compression.lzo.LzoCodec to the list of codecs
 - enabled mapreduce.map.output.compress and set 
 ### Revise YARN resource assignment based on user feedback
+See the last question, answer is related. 
 ### Commission/decommission a node
 - Click Hosts tab
 - Select the hosts you want to decommission
@@ -275,7 +276,7 @@ sudo -u hdfs hdfs dfs -chown -R hive:hive /user/hive/warehouse
 
 ### Enable/configure log and query redaction
 - Make sure that the property 'Enable Log and Query Redaction' is enabled (HDFS->Configuration->redaction_policy_enabled)
-- Configure the property "Log and Query Redaction Policy" by creating and defining as many rules you want
+- Configure the property "Log and Query Redaction Policy" by creating and defining as many rules as you want
 
 ### Create encrypted zones in HDFS
 HDFS implements transparent, end-to-end encryption. Once configured, data read from and written to special HDFS directories is transparently encrypted and decrypted without requiring changes to user application code. This encryption is also end-to-end, which means the data can only be encrypted and decrypted by the client. HDFS never stores or has access to unencrypted data or unencrypted data encryption keys. This satisfies two typical requirements for encryption: at-rest encryption (meaning data on persistent media, such as a disk) as well as in-transit encryption (e.g. when data is travelling over the network).
